@@ -1,7 +1,0 @@
-2024-03-05T04:59:24:INFO: { "OS": "Linux", "video_adapter_driver_info": ["nvidia", ""], "screen_size": (2560, 1440), "screen_dpi": 93, "screen_scale": 1, "cores": 8, "locale": "en_US" }
-2024-03-05T04:59:24:INFO: [step_commands: 0]
-Godot Engine v4.2.1.stable.flathub.b09f793f5 - https://godotengine.org
-OpenGL API 3.3.0 NVIDIA 550.54.14 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 2060 SUPER
- 
---- Debugging process stopped ---
-

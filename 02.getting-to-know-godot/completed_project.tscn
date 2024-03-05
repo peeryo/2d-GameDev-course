@@ -116,4 +116,4 @@ position = Vector2(1792, -2048)
 
 [node name="BackgroundBlueSky" parent="." instance=ExtResource("11_7e8yr")]
 
-[connection signal="health_changed" from="Player" to="UILayer/UIHealthBar" method="set_health"]
+[connection signal="health_changed" from="Player" to="UILayer/UIHealthBar" method="_on_player_health_changed"]
