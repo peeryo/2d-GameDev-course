@@ -8,6 +8,4 @@ script = ExtResource("1_jnrqd")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
