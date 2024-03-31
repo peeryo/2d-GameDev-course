@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmkso"]
 radius = 57.1402
 
-[node name="EnergyPack" type="Area2D"]
+[node name="EnergyPack" type="Area2D" groups=["energy"]]
 script = ExtResource("1_rallo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

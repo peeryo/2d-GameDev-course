@@ -79,6 +79,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="EnergyBar" type="ProgressBar" parent="UI"]
 custom_minimum_size = Vector2(100, 8)
+layout_mode = 0
 offset_left = -66.0
 offset_top = -99.0
 offset_right = 58.0
