@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	
 func set_health(new_energy: int) -> void:
 	energy = new_energy
-	get_node("UI/EnergyBar").value = energy
+	get_node("UI/EnergyBar ").value = energy
 
 func _on_area_entered(area: Area2D) -> void:
 	set_health(energy + 20)
