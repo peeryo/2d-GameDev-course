@@ -17,20 +17,16 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 	canvas_group.material.set_shader_parameter("line_thickness", 3.0)
 
-
 func set_outline_thickness(new_thickness: float) -> void:
 	canvas_group.material.set_shader_parameter("line_thickness", new_thickness)
-
 
 func _on_mouse_entered() -> void:
 	var tween := create_tween()
 	tween.tween_method(set_outline_thickness, 3.0, 6.0, 0.08)
 
-
 func _on_mouse_exited() -> void:
 	var tween := create_tween()
 	tween.tween_method(set_outline_thickness, 6.0, 3.0, 0.08)
-
 
 #ANCHOR:_input_event_definition
 func _input_event(viewport: Node, event: InputEvent, shape_index: int):
@@ -49,7 +45,6 @@ func _input_event(viewport: Node, event: InputEvent, shape_index: int):
 #ANCHOR:call_open
 		open()
 #END:call_open
-
 
 #ANCHOR:open_definition
 func open() -> void:
@@ -73,13 +68,12 @@ func open() -> void:
 		_spawn_random_item()
 #END:spawn_random_items
 
-
 #ANCHOR:spawn_random_item_complete
 #ANCHOR:spawn_random_item_definition
 func _spawn_random_item() -> void:
 #END:spawn_random_item_definition
 #ANCHOR:instantiate_item
-	var loot_item: Node2D = possible_items.pick_random().instantiate()
+	var loot_item: Area2D = possible_items.pick_random().instantiate()
 	add_child(loot_item)
 #END:instantiate_item
 

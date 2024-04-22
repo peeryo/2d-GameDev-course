@@ -113,7 +113,8 @@ func _init() -> void:
 			ARG_GENERATE_PROJECT_SOLUTIONS,
 			ARG_PRACTICES,
 			["-o", "--output-path", "Output directory path."],
-			["--disable-plugins", "Disable plugins."],
+			["--do-disable-plugins", "Disable plugins."],
+			["--do-project-diff", "Run project() function from practice_solutions/diff.gd if available."],
 		])
 		user_args = parsed.result.user_args
 		args = parsed.result.args
@@ -139,8 +140,9 @@ func _init() -> void:
 			return_code = build_project("solutions", args["--output-path"], exclude_solutions_patterns)
 
 		if key in ARG_PRACTICES:
-			var do_disable_plugins := "--disable-plugins" in user_args
-			return_code = build_practices(do_disable_plugins)
+			var do_disable_plugins := "--do-disable-plugins" in user_args
+			var do_project_diff := "--do-project-diff" in user_args
+			return_code = build_practices(do_disable_plugins, do_project_diff)
 
 		if return_code != ReturnCode.OK:
 			break
@@ -224,7 +226,7 @@ func build_project(suffix: String, output_path: String, exclude_patterns: Array[
 		var output := []
 		var arguments_list := [
 			["--path", destination_project_dir_path, "--headless", "--editor", "--quit"],
-			["--path", destination_project_dir_path, "--headless", "--script", plugin_dir_path.path_join("build.gd"), "--", "--generate-practices", "--disable-plugins"]
+			["--path", destination_project_dir_path, "--headless", "--script", plugin_dir_path.path_join("build.gd"), "--", "--generate-practices", "--do-disable-plugins", "--do-project-diff"]
 		]
 		print("Generating practice files from solutions in workbook project...")
 		for arguments: Array in arguments_list:
@@ -251,9 +253,10 @@ func build_project(suffix: String, output_path: String, exclude_patterns: Array[
 	return return_code
 
 
-func build_practices(do_disable_plugins := false) -> ReturnCode:
+func build_practices(do_disable_plugins := false, do_project_diff := false) -> ReturnCode:
 	var result := ReturnCode.OK
 	if do_disable_plugins:
+		# ProjectSettings.set_setting()
 		var cfg = ConfigFile.new()
 		cfg.load(PROJECT_FILE)
 		for section in [PLUGINS_SECTION, AUTOLOAD_SECTION]:
@@ -265,6 +268,13 @@ func build_practices(do_disable_plugins := false) -> ReturnCode:
 		result = build_practice(dir_name)
 		if result == ReturnCode.FAIL:
 			break
+
+	var project_diff_path := Paths.SOLUTIONS_PATH.path_join("diff.gd")
+	if FileAccess.file_exists(project_diff_path):
+		const PROJECT_FUNC_NAME := "edit_project_configuration"
+		var project_diff := load(project_diff_path)
+		if do_project_diff and project_diff != null and PROJECT_FUNC_NAME in project_diff:
+			project_diff.call(PROJECT_FUNC_NAME)
 	return result
 
 
@@ -310,18 +320,17 @@ func build_practice(dir_name: StringName, is_forced := false) -> ReturnCode:
 				node.remove_from_group(Layout.VISIBILITY_GROUP)
 
 			if solution_diff != null:
-				var func_name := solution_file_path.get_file().get_basename()
-				if func_name in solution_diff:
-					solution_diff.call(func_name, solution_scene)
+				var diff_func_names := solution_diff.get_script_method_list().map(func(d: Dictionary) -> String: return d.name)
+				var diff_func_name := solution_file_path.get_file().get_basename()
+				if diff_func_name in diff_func_names:
+					solution_diff.call(diff_func_name, solution_scene)
 					print_rich(LOG_MESSAGE % [solution_file_path, "[color=blue]DIFF[/color]"])
 				else:
-					push_error("FAIL: Found 'diff.gd' script for '%s', and expected a static function named '%s', but it was not found." % [solution_file_path, func_name])
-					return ReturnCode.FAIL
+					print_rich(LOG_MESSAGE % ["%s:%s() not found" % [solution_diff_path, diff_func_name], "[color=orange]SKIP[/color]"])
 
 			var practice_packed_scene := PackedScene.new()
 			practice_packed_scene.pack(solution_scene)
 			ResourceSaver.save(practice_packed_scene, practice_file_path)
-			print_rich(LOG_MESSAGE % [practice_file_path, "[color=green]PROCESS[/color]"])
 			was_copied = true
 
 		if not was_copied:

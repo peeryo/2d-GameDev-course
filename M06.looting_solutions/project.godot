@@ -2,9 +2,10 @@ config_version=5
 
 [application]
 
-config/name="Learn to Code: Looting (Solutions)"
+config/name="M6. Looting (Solutions)"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon_looting.png"
+config/tags=PackedStringArray("solutions")
 
 [display]
 
@@ -13,7 +14,7 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/size/window_width_override=1152
 window/size/window_height_override=648
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -49,7 +50,12 @@ boost={
 }
 left_click={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(177, 17),"global_position":Vector2(949, 420),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+right_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(192, 14),"global_position":Vector2(964, 417),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

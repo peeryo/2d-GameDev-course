@@ -26,7 +26,7 @@ func _init() -> void:
 		),
 		PracticeMetadata.new(
 			"06_looting_050_the_piñata",
-			"The piñata",
-			preload("res://addons/gdquest_practice_framework/practice_solutions/L6.P1.the_piñata/the_piñata.tscn")
+			"The pinata",
+			preload("res://addons/gdquest_practice_framework/practice_solutions/L6.P1.the_pinata/the_pinata.tscn")
 		),
 	]
