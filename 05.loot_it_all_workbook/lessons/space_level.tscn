@@ -12,3 +12,4 @@ position = Vector2(946, 546)
 [node name="SpaceBackground" parent="." instance=ExtResource("3_e6xy1")]
 
 [node name="random_item_placer" parent="." instance=ExtResource("3_pblpa")]
+visible = false
