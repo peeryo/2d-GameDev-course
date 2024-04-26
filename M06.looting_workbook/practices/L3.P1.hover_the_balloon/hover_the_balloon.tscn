@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgdxbgm3hbd4p"]
+[gd_scene load_steps=5 format=3 uid="uid://bgdxbgm3hbd4p"]
 
 [ext_resource type="PackedScene" uid="uid://bmdplhbajlq3e" path="res://addons/gdquest_practice_framework/practice_solutions/L3.P1.hover_the_balloon/balloon_hover.tscn" id="1_3uwkk"]
+[ext_resource type="Shader" path="res://practices/L3.P1.hover_the_balloon/group_outline.gdshader" id="1_qsgrc"]
 [ext_resource type="Script" path="res://practices/L3.P1.hover_the_balloon/balloon_hover.gd" id="2_ac8jr"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8cro"]
+shader = ExtResource("1_qsgrc")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 4.0
+shader_parameter/viewport_scale = Vector2(1, 1)
+
 [node name="HoverTheBalloon" type="Node2D"]
+material = SubResource("ShaderMaterial_x8cro")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="BalloonHover" parent="." instance=ExtResource("1_3uwkk")]
