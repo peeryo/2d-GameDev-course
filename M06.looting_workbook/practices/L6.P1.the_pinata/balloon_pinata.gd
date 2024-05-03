@@ -19,6 +19,7 @@ func _input_event(viewport: Node, event: InputEvent, shape_index: int):
 
 func spawn_candy() -> void:
 	# You have to loop 3 times over the next lines of code!
+	
 	for current_index in range(0):
 		# Complete the variables to calculate a random position in a circle using polar coordinates.
 		var radius := 0.0
