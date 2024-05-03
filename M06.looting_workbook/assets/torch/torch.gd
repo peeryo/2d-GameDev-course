@@ -18,5 +18,4 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 	if is_mouse_pressed:
 		flame.visible = not flame.visible
 
-#func  toggle_target_node_visibility() -> void:
 	
