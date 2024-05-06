@@ -5,9 +5,10 @@ extends Node2D
 
 #3 drag nodes here to create references
 #remember to hold CMD on a Mac to auto write onready vars
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var wait_timer: Timer = $WaitTimer
 @onready var shadow: Sprite2D = $Shadow
+@onready var wait_timer: Timer = $WaitTimer
 
 
 func _ready() -> void:
