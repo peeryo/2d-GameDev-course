@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1rgncfgjxefj" path="res://assets/dungeon/pillar.png" id="4_gq228"]
 [ext_resource type="Texture2D" uid="uid://l0y1k1obencd" path="res://assets/dungeon/spider_web.png" id="5_ywba7"]
 [ext_resource type="PackedScene" uid="uid://eundh35r605v" path="res://assets/torch/torch.tscn" id="6_fokey"]
-[ext_resource type="PackedScene" uid="uid://6550exx3hxcx" path="res://lessons/chest/chest.tscn" id="7_ngkfc"]
+[ext_resource type="PackedScene" uid="uid://dsw5246jlcrjk" path="res://lessons/chest/chest.tscn" id="7_ngkfc"]
 [ext_resource type="PackedScene" uid="uid://cq8w6m42orde1" path="res://lessons/bird.tscn" id="8_bhk4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s4s5"]
