@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbg3fd5jvni8p"]
 
-[ext_resource type="Material" uid="uid://blciib2n6bpvf" path="res://practice_solutions/L5.P2.text_slideshow/assets/practice_background_material.tres" id="1_lhsti"]
+[ext_resource type="Material" uid="uid://blciib2n6bpvf" path="res://practice_solutions/L6.P1.poetry/assets/practice_background_material.tres" id="1_lhsti"]
 [ext_resource type="Theme" uid="uid://bnmph65g7q2l3" path="res://practice_solutions/L5.P2.text_slideshow/assets/practice_exercises_theme.tres" id="2_82x6t"]
 [ext_resource type="Script" path="res://practice_solutions/L5.P2.text_slideshow/text_slideshow.gd" id="3_ft4rh"]
 

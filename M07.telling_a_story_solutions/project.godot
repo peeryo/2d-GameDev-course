@@ -1,11 +1,20 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
 
 config/name="M07. Telling a Story (Solutions)"
+config/tags=PackedStringArray("solutions")
+run/main_scene="res://practice_solutions/L5.P2.text_slideshow/text_slideshow.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon_telling_a_story.png"
-config/tags=PackedStringArray("solutions")
 
 [display]
 

@@ -8,7 +8,10 @@ var items: Array[String] = [
 	"Nature doesn't have a code review process.",
 ]
 # change this to point at the correct item: "It has too many bugs!"
-var item_index := 0
+var item_index := 2
+#When the index is incorrectly set to 0 why does one of the workbook pages display the correct answer?
+#When I set it to the correct index of 2, both show the correct answer. 
+#Why are there two? That's confusing
 
 @onready var response_label: Label = %responseLabel
 
