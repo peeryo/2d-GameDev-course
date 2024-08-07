@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rf2djma1p2ou"]
+[gd_scene load_steps=9 format=3 uid="uid://rf2djma1p2ou"]
 
 [ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_u8fv2"]
 [ext_resource type="Theme" uid="uid://bokuh2q748w2g" path="res://lessons/main_theme.tres" id="1_xi0no"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://lessons/dialog.gd" id="2_x5nhn"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="3_2s8bi"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="4_bft4r"]
+[ext_resource type="AudioStream" uid="uid://bafjgt7eu3x5a" path="res://assets/talking_synth.ogg" id="7_lu6f6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0p81p"]
 shader = ExtResource("1_u8fv2")
@@ -108,3 +109,7 @@ offset_right = 155.0
 grow_vertical = 0
 text = "Back
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_lu6f6")
