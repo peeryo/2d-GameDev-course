@@ -38,5 +38,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_r7xmg")
 Button/styles/hover = ExtResource("2_1q2ka")
 Button/styles/normal = ExtResource("1_qe85n")
 Button/styles/pressed = ExtResource("2_1q2ka")
+HBoxContainer/constants/separation = 20
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_8fyyr")
+VBoxContainer/constants/separation = 20
