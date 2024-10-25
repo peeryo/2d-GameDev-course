@@ -1,17 +1,18 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://ejev0xenqj53"]
 
-[ext_resource type="Material" path="res://practices/L8.P1.pick_your_character/assets/practice_background_material.tres" id="1_tpkwg"]
-[ext_resource type="Theme" path="res://practices/L8.P1.pick_your_character/assets/practice_exercises_theme.tres" id="2_n1idx"]
-[ext_resource type="Script" path="res://practices/L8.P1.pick_your_character/pick_your_character.gd" id="3_mj68t"]
+[ext_resource type="Material" uid="uid://bowg6rfuo73kb" path="res://practices/L8.P1.pick_your_character/assets/practice_background_material.tres" id="1_w22nx"]
+[ext_resource type="Theme" uid="uid://cfwqt5h4pl0p5" path="res://practices/L8.P1.pick_your_character/assets/practice_exercises_theme.tres" id="2_q38dq"]
+[ext_resource type="Script" path="res://practices/L8.P1.pick_your_character/pick_your_character.gd" id="3_48y2l"]
 
 [node name="PickYourPlayer" type="ColorRect"]
-material = ExtResource("1_tpkwg")
+material = ExtResource("1_w22nx")
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_n1idx")
-script = ExtResource("3_mj68t")
+theme = ExtResource("2_q38dq")
+script = ExtResource("3_48y2l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
