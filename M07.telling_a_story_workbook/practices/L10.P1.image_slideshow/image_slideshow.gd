@@ -18,12 +18,14 @@ func _ready() -> void:
 
 # Displays the image
 func show_image() -> void:
-	pass
+	var current_item := items[item_index]
+	texture_rect.texture = items[item_index]
 
 
 # Increments the index each time is called.
 func advance() -> void:
 	# make sure to increment the `item_index`
+	item_index += 1
 	if item_index >= items.size():
 		item_index = 0
 	# Don't forget to call the show_image function

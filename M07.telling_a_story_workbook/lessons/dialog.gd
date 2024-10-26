@@ -4,21 +4,40 @@ extends Control
 @onready var next_button: Button = %NextButton
 @onready var back_button = %BackButton
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var body: TextureRect = %Body
+@onready var expression: TextureRect = %Expression
 
+var expressions := {
+	"happy": preload("res://assets/emotion_happy.png"),
+	"regular": preload("res://assets/emotion_regular.png"),
+	"sad": preload("res://assets/emotion_sad.png")
+}
 
-
-var dialog_items :Array[String] = [
-	"Simple arrays are pretty easy",
-	"They can get more complex and hard",
-	"I can tell them to only show strings",
-	"What else can we do with them?",
+var dialog_items :Array[Dictionary] = [
+	{
+		"expression": expressions["regular"],
+		"text": "Simple arrays are pretty easy",
+	},
+	{
+		"expression": expressions["sad"],
+		"text": "They can get more complex and hard",
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "I can tell them to only show strings",
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "What else can we do with them?",
+	},
 ]
 
 var current_item_index := 0
 
 func show_text() -> void:
 	var current_item := dialog_items[current_item_index]
-	rich_text_label.text = current_item
+	rich_text_label.text = current_item["text"]
+	expression.texture = current_item["expression"]
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
 	var text_appearing_duration := 1.2
