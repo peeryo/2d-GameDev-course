@@ -33,7 +33,7 @@ var dialog_items :Array[Dictionary] = [
 		"character": bodies["sophia"]
 	},
 	{
-		"expression": expressions["happy"],
+		"expression": expressions["sad"],
 		"text": "Well, perhaps we should use dictionaries instead",
 		"character": bodies["pink"]
 	},
@@ -81,6 +81,16 @@ func show_text() -> void:
 	# We stop the audio when the text finishes appearing.
 	tween.finished.connect(audio_stream_player.stop)
 	slide_in()
+	
+	next_button.disabled = true
+	tween.finished.connect(func() -> void:
+		next_button.disabled = false
+	)
+	#why isn't this button working with key presses? It disables fine
+	back_button.disabled = true
+	tween.finished.connect(func() -> void:
+		back_button.disabled = false
+	)
 	
 func advance() -> void:
 	current_item_index += 1
