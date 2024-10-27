@@ -5,22 +5,42 @@ var expressions := {
 	"sad": preload("res://assets/emotion_sad.png")
 }
 
+var bodies := {
+	
+	"sophia": preload("res://assets/sophia.png"),
+	"pink": preload("res://assets/pink.png")
+}
+
 var dialog_items :Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
 		"text": "Simple arrays are pretty easy",
+		"character": bodies["pink"]
 	},
 	{
 		"expression": expressions["sad"],
 		"text": "They can get more complex and hard",
+		"character": bodies["sophia"]
 	},
 	{
 		"expression": expressions["happy"],
 		"text": "I can tell them to only show strings",
+		"character": bodies["pink"]
 	},
 	{
 		"expression": expressions["regular"],
 		"text": "What else can we do with them?",
+		"character": bodies["sophia"]
+	},
+	{
+		"expression": expressions["happy"],
+		"text": "Well, perhaps we should use dictionaries instead",
+		"character": bodies["pink"]
+	},
+	{
+		"expression": expressions["regular"],
+		"text": "Oh no, another new concept, I'm not sure I'm ready",
+		"character": bodies["sophia"]
 	},
 ]
 
@@ -46,10 +66,11 @@ func show_text() -> void:
 	var current_item := dialog_items[current_item_index]
 	rich_text_label.text = current_item["text"]
 	expression.texture = current_item["expression"]
+	body.texture = current_item["character"]
 	# We animate the text appearing letter by letter.
 	rich_text_label.visible_ratio = 0.0
 	var tween := create_tween()
-	var text_appearing_duration := 1.0
+	var text_appearing_duration: float = current_item["text"].length() / 30.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 
 	# This is where we play the audio. We randomize the audio playback's start
