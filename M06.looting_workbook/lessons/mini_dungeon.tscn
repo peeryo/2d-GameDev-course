@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://l0y1k1obencd" path="res://assets/dungeon/spider_web.png" id="5_ywba7"]
 [ext_resource type="PackedScene" uid="uid://eundh35r605v" path="res://assets/torch/torch.tscn" id="6_fokey"]
 [ext_resource type="PackedScene" uid="uid://dsw5246jlcrjk" path="res://lessons/chest/chest.tscn" id="7_ngkfc"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cq8w6m42orde1" path="res://lessons/bird.tscn" id="8_bhk4h"]
+=======
+[ext_resource type="PackedScene" uid="uid://db0os0emlpek4" path="res://lessons/bird.tscn" id="8_bhk4h"]
+>>>>>>> M7TellingAStory
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s4s5"]
 texture = ExtResource("1_sym7n")
