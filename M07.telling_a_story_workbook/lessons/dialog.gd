@@ -14,27 +14,27 @@ var bodies := {
 var dialog_items :Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
-		"text": "Simple arrays are pretty easy",
+		"text": "Simple [shake]arrays[/shake] are pretty [tornado freq=1.0]easy[/tornado]",
 		"character": bodies["pink"]
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "They can get more complex and hard",
+		"text": "They can get more [rainbow val=0.8]complex and hard[/rainbow]",
 		"character": bodies["sophia"]
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "I can tell them to only show strings",
+		"text": "I can tell them to only show [s]strings[/s]",
 		"character": bodies["pink"]
 	},
 	{
 		"expression": expressions["regular"],
-		"text": "What else can we do with them?",
+		"text": "[fade]What else can[/fade] we do with them?",
 		"character": bodies["sophia"]
 	},
 	{
 		"expression": expressions["sad"],
-		"text": "Well, perhaps we should use dictionaries instead",
+		"text": "Well, perhaps we should use [shake freq=2.0]dictionaries[/shake] instead",
 		"character": bodies["pink"]
 	},
 	{
