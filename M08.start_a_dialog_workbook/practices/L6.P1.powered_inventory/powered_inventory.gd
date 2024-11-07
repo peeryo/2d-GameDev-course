@@ -26,11 +26,16 @@ func _ready() -> void:
 func display_powerups(powerups_list: Array[Power]) -> void:
 	# Make sure to remove previous children before adding the new ones.
 	# Once you removed all children, loop through the powerups_list array
+	for child in powerups_v_box_container.get_children():
+		child.queue_free()
+	
 	for power in powerups_list:
 		# Create a TextureRect node.
+		var power_texture_rect := TextureRect.new()
 		# Assign the power's image to the TextureRect node's `texture` property.
+		power_texture_rect.texture = power.image
 		# Then, add the TextureRect as a child of powerups_v_box_container.
-		pass
+		powerups_v_box_container.add_child(power_texture_rect)
 
 
 # Displays an item. Requires an item name

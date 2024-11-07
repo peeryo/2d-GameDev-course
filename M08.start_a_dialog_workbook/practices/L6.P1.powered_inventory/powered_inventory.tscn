@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://jr2jci6g15uy"]
 
 [ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="1_urtnv"]
-[ext_resource type="Texture2D" path="res://assets/bubble_pattern.png" id="2_206jl"]
+[ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_206jl"]
 [ext_resource type="Script" path="res://practices/L6.P1.powered_inventory/powered_inventory.gd" id="3_gu28j"]
 [ext_resource type="Script" path="res://practices/L6.P1.powered_inventory/powered_item.gd" id="4_k1ghh"]
-[ext_resource type="Theme" path="res://assets/practices/practices_theme.tres" id="5_chan2"]
+[ext_resource type="Theme" uid="uid://qk3rjf73qo8w" path="res://assets/practices/practices_theme.tres" id="5_chan2"]
+[ext_resource type="Script" path="res://practices/L6.P1.powered_inventory/power.gd" id="5_p61qb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p0ea8"]
 shader = ExtResource("1_urtnv")
@@ -13,14 +14,48 @@ shader_parameter/pattern_color = Color(0.467561, 0.0634301, 0.715504, 1)
 shader_parameter/pattern_size = 256.0
 shader_parameter/pattern_sampler = ExtResource("2_206jl")
 
+[sub_resource type="Resource" id="Resource_f68ig"]
+script = ExtResource("5_p61qb")
+
+[sub_resource type="Resource" id="Resource_iaocu"]
+script = ExtResource("4_k1ghh")
+text = "sword"
+price = 12
+powerups_list = Array[ExtResource("5_p61qb")]([SubResource("Resource_f68ig")])
+
+[sub_resource type="Resource" id="Resource_o28bs"]
+script = ExtResource("5_p61qb")
+
+[sub_resource type="Resource" id="Resource_fvxo3"]
+script = ExtResource("4_k1ghh")
+text = "shrimp"
+price = 10
+powerups_list = Array[ExtResource("5_p61qb")]([SubResource("Resource_o28bs")])
+
+[sub_resource type="Resource" id="Resource_v4bon"]
+script = ExtResource("4_k1ghh")
+text = "ring"
+price = 10
+powerups_list = Array[ExtResource("5_p61qb")]([null])
+
+[sub_resource type="Resource" id="Resource_7f174"]
+script = ExtResource("5_p61qb")
+
+[sub_resource type="Resource" id="Resource_33dnb"]
+script = ExtResource("4_k1ghh")
+text = "shield"
+price = 10
+powerups_list = Array[ExtResource("5_p61qb")]([SubResource("Resource_7f174")])
+
 [node name="PoweredInventory" type="ColorRect"]
 material = SubResource("ShaderMaterial_p0ea8")
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_gu28j")
-items_list = Array[ExtResource("4_k1ghh")]([])
+items_list = Array[ExtResource("4_k1ghh")]([SubResource("Resource_iaocu"), SubResource("Resource_fvxo3"), SubResource("Resource_v4bon"), SubResource("Resource_33dnb")])
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
